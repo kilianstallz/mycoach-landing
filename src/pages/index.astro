@@ -1,0 +1,731 @@
+---
+import Layout from '../layouts/Layout.astro';
+import '../styles/global.css';
+---
+
+<Layout>
+  <!-- ============================================================
+       NAVIGATION
+       ============================================================ -->
+  <nav class="nav" id="main-nav">
+    <div class="container">
+      <div class="nav-inner">
+        <a href="#" class="nav-logo" aria-label="mycoach home">
+          mycoach<span class="nav-logo-dot">·</span>
+        </a>
+
+        <ul class="nav-links" role="list">
+          <li><a href="#features">Features</a></li>
+          <li><a href="#pricing">Pricing</a></li>
+          <li><a href="#compare">Compare</a></li>
+        </ul>
+
+        <div class="nav-right">
+          <a href="#waitlist" class="btn btn-primary nav-cta-desktop">Join Waitlist</a>
+          <button class="nav-hamburger" id="nav-hamburger" aria-label="Toggle menu" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="nav-mobile-menu" id="nav-mobile-menu" role="navigation" aria-label="Mobile navigation">
+      <a href="#features" class="mobile-nav-link">Features</a>
+      <a href="#pricing" class="mobile-nav-link">Pricing</a>
+      <a href="#compare" class="mobile-nav-link">Compare</a>
+      <a href="#waitlist" class="btn btn-primary">Join Waitlist</a>
+    </div>
+  </nav>
+
+  <!-- ============================================================
+       HERO
+       ============================================================ -->
+  <section class="hero section" id="hero">
+    <div class="container">
+      <span class="hero-eyebrow">
+        <svg width="10" height="10" viewBox="0 0 10 10" fill="currentColor" aria-hidden="true">
+          <circle cx="5" cy="5" r="5"/>
+        </svg>
+        Waitlist now open — first 100 get 3 months Athlete free
+      </span>
+
+      <h1 class="hero-headline">
+        Train smarter.<br />
+        Recover better.<br />
+        <span class="accent">Race faster.</span>
+      </h1>
+
+      <p class="hero-subheadline">
+        Power analytics, AI coaching, strength tracking, and daily readiness — all in one place.
+        Built for cyclists and runners who take their training seriously.
+      </p>
+
+      <div class="hero-ctas">
+        <a href="#waitlist" class="btn btn-primary" id="cta-hero">
+          Join the waitlist →
+        </a>
+        <a href="#features" class="btn btn-ghost">
+          See how it works ↓
+        </a>
+      </div>
+
+      <div class="hero-visual" aria-label="mycoach dashboard preview">
+        <div class="hero-visual-placeholder">
+          <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+            <rect x="4" y="12" width="56" height="40" rx="4"/>
+            <path d="M4 20h56"/>
+            <path d="M16 32 L24 26 L32 30 L40 22 L48 28"/>
+            <circle cx="16" cy="32" r="2" fill="currentColor"/>
+            <circle cx="24" cy="26" r="2" fill="currentColor"/>
+            <circle cx="32" cy="30" r="2" fill="currentColor"/>
+            <circle cx="40" cy="22" r="2" fill="currentColor"/>
+            <circle cx="48" cy="28" r="2" fill="currentColor"/>
+          </svg>
+          <span>Dashboard preview — screenshot coming soon</span>
+        </div>
+      </div>
+
+      <!-- Social proof strip -->
+      <div class="social-proof-strip" role="list" aria-label="Product highlights">
+        <span role="listitem">"Built by a cyclist, for cyclists"</span>
+        <span class="divider" aria-hidden="true"></span>
+        <span role="listitem">Strava sync</span>
+        <span class="divider" aria-hidden="true"></span>
+        <span role="listitem">Garmin-ready</span>
+        <span class="divider" aria-hidden="true"></span>
+        <span role="listitem">AI-powered</span>
+        <span class="divider" aria-hidden="true"></span>
+        <span role="listitem">No bloated subscriptions</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       PROBLEM / POSITIONING
+       ============================================================ -->
+  <section class="problem section" id="positioning" aria-labelledby="problem-heading">
+    <div class="container">
+      <p class="section-label">The problem</p>
+      <h2 class="problem-heading" id="problem-heading">
+        TrainingPeaks is expensive. Intervals.icu is free but complex.
+        mycoach is built for athletes who want both.
+      </h2>
+
+      <div class="pain-cards" role="list">
+        <article class="pain-card" role="listitem">
+          <div class="pain-card-icon" aria-hidden="true">🗂️</div>
+          <h3>Too many tools</h3>
+          <p>
+            Calendar here, strength tracker there, nutrition app elsewhere.
+            You spend more time managing data than training.
+          </p>
+        </article>
+
+        <article class="pain-card" role="listitem">
+          <div class="pain-card-icon" aria-hidden="true">📊</div>
+          <h3>Shallow analytics</h3>
+          <p>
+            Most apps show you numbers. Few explain what they mean or tell
+            you what to do next.
+          </p>
+        </article>
+
+        <article class="pain-card" role="listitem">
+          <div class="pain-card-icon" aria-hidden="true">🤖</div>
+          <h3>Generic AI that doesn't know you</h3>
+          <p>
+            ChatGPT doesn't know your FTP, your race schedule, or that you
+            just had a hard week.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FEATURE HIGHLIGHTS
+       ============================================================ -->
+  <section class="section" id="features" aria-labelledby="features-heading">
+    <div class="container">
+      <p class="section-label">Features</p>
+      <h2 class="section-heading" id="features-heading">Everything you need. Nothing you don't.</h2>
+      <p class="section-subheading">
+        Five core systems, designed to work together so your data tells a complete story.
+      </p>
+
+      <!-- Block 1 — Performance Management -->
+      <div class="feature-block" aria-label="Performance Management feature">
+        <div class="feature-content">
+          <div class="feature-icon" aria-hidden="true">📈</div>
+          <p class="feature-tagline">Performance Management</p>
+          <h3>Fitness · Fatigue · Form — always in view.</h3>
+          <p>
+            PMC chart, CP/W' model, power curve, and rider type classification.
+            Know exactly where you are in your training cycle and make data-driven
+            decisions about your next block.
+          </p>
+        </div>
+        <div class="feature-visual" aria-label="PMC chart preview">
+          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+            <path d="M4 36 L12 28 L20 32 L28 20 L36 24 L44 14"/>
+            <path d="M4 40 L12 36 L20 38 L28 32 L36 34 L44 28" opacity="0.5"/>
+          </svg>
+          <span>PMC chart</span>
+        </div>
+      </div>
+
+      <!-- Block 2 — AI Coach -->
+      <div class="feature-block reverse" aria-label="AI Coach feature">
+        <div class="feature-content">
+          <div class="feature-icon" aria-hidden="true">💬</div>
+          <p class="feature-tagline">AI Coach</p>
+          <h3>Ask anything. Get answers grounded in your actual training history.</h3>
+          <p>
+            The AI has your FTP, your schedule, your readiness score — it doesn't
+            need you to explain the context. Ask about recovery, pacing, or your
+            next race and get a real answer.
+          </p>
+        </div>
+        <div class="feature-visual" aria-label="AI Coach interface preview">
+          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+            <rect x="6" y="8" width="36" height="26" rx="4"/>
+            <path d="M6 34 L18 34 L24 42 L30 34 L42 34" fill="currentColor" stroke="none" opacity="0.2"/>
+            <path d="M12 18 h24 M12 24 h16"/>
+          </svg>
+          <span>AI Coach chat</span>
+        </div>
+      </div>
+
+      <!-- Block 3 — Strength + Wellness -->
+      <div class="feature-block" aria-label="Strength and Wellness feature">
+        <div class="feature-content">
+          <div class="feature-icon" aria-hidden="true">💪</div>
+          <p class="feature-tagline">Strength + Wellness</p>
+          <h3>Not an afterthought.</h3>
+          <p>
+            Log sets, track PRs, monitor HRV and sleep. The readiness score
+            combines training load, wellness, and subjective check-in into a
+            single daily signal you can actually act on.
+          </p>
+        </div>
+        <div class="feature-visual" aria-label="Strength and readiness preview">
+          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+            <circle cx="24" cy="24" r="16"/>
+            <path d="M24 8 A16 16 0 0 1 38.9 32" stroke-width="3" stroke-linecap="round"/>
+            <text x="24" y="28" text-anchor="middle" font-size="10" fill="currentColor" stroke="none">82</text>
+          </svg>
+          <span>Readiness score</span>
+        </div>
+      </div>
+
+      <!-- Block 4 — Plans That Execute -->
+      <div class="feature-block reverse" aria-label="Training Plans feature">
+        <div class="feature-content">
+          <div class="feature-icon" aria-hidden="true">📅</div>
+          <p class="feature-tagline">Plans That Execute</p>
+          <h3>Build, export, race.</h3>
+          <p>
+            Build structured workouts with power targets, export to your device,
+            and let the AI generate a full training block around your race calendar.
+            From base to peak — planned and periodised.
+          </p>
+        </div>
+        <div class="feature-visual" aria-label="Training calendar preview">
+          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+            <rect x="6" y="8" width="36" height="34" rx="3"/>
+            <path d="M6 18 h36"/>
+            <path d="M16 8 v6 M32 8 v6"/>
+            <rect x="10" y="24" width="8" height="6" rx="1" fill="currentColor" opacity="0.3"/>
+            <rect x="20" y="24" width="8" height="6" rx="1" fill="currentColor" opacity="0.5"/>
+            <rect x="30" y="24" width="8" height="6" rx="1" fill="currentColor" opacity="0.2"/>
+          </svg>
+          <span>Training calendar</span>
+        </div>
+      </div>
+
+      <!-- Block 5 — Open by Design -->
+      <div class="feature-block" aria-label="Open API feature">
+        <div class="feature-content">
+          <div class="feature-icon" aria-hidden="true">🔓</div>
+          <p class="feature-tagline">Open by Design</p>
+          <h3>Your data. Your tools. Your rules.</h3>
+          <p>
+            Every data point accessible via MCP API. Connect mycoach to Claude,
+            GPT, or any AI client. Your data stays yours — no lock-in, no walled
+            garden.
+          </p>
+        </div>
+        <div class="feature-visual" aria-label="API integration preview">
+          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+            <rect x="6" y="14" width="14" height="20" rx="3"/>
+            <rect x="28" y="14" width="14" height="20" rx="3"/>
+            <path d="M20 24 h8" stroke-dasharray="2 2"/>
+            <circle cx="24" cy="24" r="3" fill="currentColor" opacity="0.5"/>
+          </svg>
+          <span>MCP API</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       COMPARISON TABLE
+       ============================================================ -->
+  <section class="comparison section" id="compare" aria-labelledby="compare-heading">
+    <div class="container">
+      <p class="section-label">How we compare</p>
+      <h2 class="section-heading" id="compare-heading">Built for athletes who've outgrown the alternatives.</h2>
+      <p class="section-subheading" style="margin-bottom: 2.5rem;">
+        All the features you actually use, plus the ones they never built.
+      </p>
+
+      <div class="table-wrapper" role="region" aria-label="Feature comparison table" tabindex="0">
+        <table class="comparison-table">
+          <caption>Competitor pricing as of April 2026. TrainingPeaks: $134.99/yr (≈€11.25/mo). Intervals.icu Supporter: $4/mo.</caption>
+          <thead>
+            <tr>
+              <th scope="col">Feature</th>
+              <th scope="col" class="highlight">mycoach</th>
+              <th scope="col">TrainingPeaks<br/><small>€11.25/mo</small></th>
+              <th scope="col">intervals.icu<br/><small>Free</small></th>
+              <th scope="col">intervals.icu<br/><small>€4/mo</small></th>
+            </tr>
+          </thead>
+          <tbody>
+            {[
+              ['PMC (Fitness/Fatigue/Form)',    true,  true,  true,  true ],
+              ['Critical Power / W\' Model',   true,  true,  true,  true ],
+              ['Power Curve (MMP)',             true,  true,  true,  true ],
+              ['Structured Workout Builder',    true,  true,  true,  true ],
+              ['AI Coaching',                  'Native', false, false, false],
+              ['MCP / Open API',               true,  false, false, false],
+              ['Strength Logger + PRs',        true,  false, false, false],
+              ['Nutrition / Fueling Calculator',true, false, false, false],
+              ['Daily Check-in + Readiness',   true,  'Limited', false, false],
+              ['Strava Sync',                  true,  true,  true,  true ],
+              ['Workout Export (FIT/iCal)',     'Planned', true, true, true],
+              ['Garmin Sync',                  'Planned', true, true, true],
+              ['Annual Training Plan Builder', true,  true,  false, true ],
+            ].map(([feature, mc, tp, iv, ivs]) => (
+              <tr>
+                <td>{feature}</td>
+                <td class="highlight-col">
+                  {mc === true
+                    ? <span class="check" aria-label="Yes">✓</span>
+                    : mc === false
+                      ? <span class="cross" aria-label="No">✕</span>
+                      : <span style="color: var(--color-text-muted); font-size: 0.85rem;">{mc}</span>
+                  }
+                </td>
+                <td>
+                  {tp === true
+                    ? <span class="check" aria-label="Yes">✓</span>
+                    : tp === false
+                      ? <span class="cross" aria-label="No">✕</span>
+                      : <span style="color: var(--color-text-muted); font-size: 0.85rem;">{tp}</span>
+                  }
+                </td>
+                <td>
+                  {iv === true
+                    ? <span class="check" aria-label="Yes">✓</span>
+                    : iv === false
+                      ? <span class="cross" aria-label="No">✕</span>
+                      : <span style="color: var(--color-text-muted); font-size: 0.85rem;">{iv}</span>
+                  }
+                </td>
+                <td>
+                  {ivs === true
+                    ? <span class="check" aria-label="Yes">✓</span>
+                    : ivs === false
+                      ? <span class="cross" aria-label="No">✕</span>
+                      : <span style="color: var(--color-text-muted); font-size: 0.85rem;">{ivs}</span>
+                  }
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       PRICING
+       ============================================================ -->
+  <section class="section" id="pricing" aria-labelledby="pricing-heading">
+    <div class="container">
+      <p class="section-label">Pricing</p>
+      <h2 class="section-heading" id="pricing-heading">Serious training tools. Honest pricing.</h2>
+      <p class="section-subheading" style="margin-bottom: 2.5rem;">
+        Start free. Upgrade when you're ready.
+      </p>
+
+      <!-- Toggle -->
+      <div class="pricing-toggle" role="group" aria-label="Billing period toggle">
+        <span class="pricing-toggle-label active" id="toggle-monthly-label">Monthly</span>
+        <button
+          class="pricing-toggle-switch"
+          id="pricing-toggle"
+          role="switch"
+          aria-checked="false"
+          aria-label="Toggle annual billing"
+        ></button>
+        <span class="pricing-toggle-label" id="toggle-annual-label">
+          Annual <span class="pricing-save-badge">Save 20%</span>
+        </span>
+      </div>
+
+      <div class="pricing-cards" id="pricing-cards">
+        <!-- Free -->
+        <div class="pricing-card">
+          <p class="pricing-tier-name">Free</p>
+          <div class="pricing-price">
+            <sup>€</sup>0
+          </div>
+          <p class="pricing-price-period pricing-price-monthly">/ month — forever free</p>
+          <p class="pricing-price-period pricing-price-annual">/ month — forever free</p>
+          <hr class="pricing-divider" />
+          <ul class="pricing-features">
+            <li>PMC chart (Fitness / Fatigue / Form)</li>
+            <li>Power curve &amp; CP model</li>
+            <li>Training calendar</li>
+            <li>Activity sync (Strava, Dropbox, file upload)</li>
+            <li>AI Coach — 30,000 tokens/week</li>
+            <li>Strength logger &amp; PRs</li>
+            <li>Basic wellness log</li>
+            <li>MCP API access</li>
+          </ul>
+          <a href="#waitlist" class="btn btn-ghost pricing-cta">Join waitlist →</a>
+        </div>
+
+        <!-- Athlete (featured) -->
+        <div class="pricing-card featured">
+          <span class="pricing-popular-badge">Most popular</span>
+          <p class="pricing-tier-name">Athlete</p>
+          <div class="pricing-price">
+            <sup>€</sup><span data-monthly="10" data-annual="8">10</span>
+          </div>
+          <p class="pricing-price-period pricing-price-monthly">/ month</p>
+          <p class="pricing-price-period pricing-price-annual">/ month, billed €96/year <em style="color: var(--color-success);">(save 20%)</em></p>
+          <hr class="pricing-divider" />
+          <ul class="pricing-features">
+            <li>Everything in Free</li>
+            <li><strong>AI Coach — 1.2M tokens/week</strong></li>
+            <li>Nutrition tracking &amp; fueling planner</li>
+            <li>Daily check-in + readiness score</li>
+            <li>Season planner + training blocks</li>
+            <li>Workout fueling calculator</li>
+            <li>Priority feature requests</li>
+          </ul>
+          <a href="#waitlist" class="btn btn-primary pricing-cta">Join waitlist →</a>
+        </div>
+
+        <!-- Pro -->
+        <div class="pricing-card">
+          <p class="pricing-tier-name">Pro</p>
+          <div class="pricing-price">
+            <sup>€</sup><span data-monthly="19" data-annual="15">19</span>
+          </div>
+          <p class="pricing-price-period pricing-price-monthly">/ month</p>
+          <p class="pricing-price-period pricing-price-annual">/ month, billed €182/year <em style="color: var(--color-success);">(save 20%)</em></p>
+          <hr class="pricing-divider" />
+          <ul class="pricing-features">
+            <li>Everything in Athlete</li>
+            <li>Advanced analytics <em style="color: var(--color-text-muted);">(coming soon)</em></li>
+            <li>Coach access &amp; athlete management <em style="color: var(--color-text-muted);">(coming soon)</em></li>
+            <li>Early access to all new features</li>
+            <li>Direct support</li>
+          </ul>
+          <a href="#waitlist" class="btn btn-ghost pricing-cta">Join waitlist →</a>
+        </div>
+      </div>
+
+      <p class="pricing-note">
+        During beta, all accounts receive Pro-level access. Lock in early pricing by joining the waitlist.
+      </p>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       TESTIMONIALS
+       ============================================================ -->
+  <section class="testimonials section" id="testimonials" aria-labelledby="testimonials-heading">
+    <div class="container">
+      <p class="section-label">Early feedback</p>
+      <h2 class="section-heading" id="testimonials-heading">What athletes are saying.</h2>
+
+      <div class="testimonial-cards" role="list">
+        <article class="testimonial-card" role="listitem">
+          <blockquote class="testimonial-quote">
+            <p>
+              I've used TrainingPeaks for 3 years. mycoach does everything I
+              actually use, plus AI coaching and strength tracking, for a
+              fraction of the price.
+            </p>
+          </blockquote>
+          <footer class="testimonial-author">
+            <div class="testimonial-avatar" aria-hidden="true">BT</div>
+            <div class="testimonial-author-info">
+              <strong>Beta Tester</strong>
+              <span>Cat 3 cyclist</span>
+            </div>
+          </footer>
+        </article>
+
+        <article class="testimonial-card" role="listitem">
+          <blockquote class="testimonial-quote">
+            <p>
+              The AI coach actually understands my training context. Asked it
+              about recovery after a stage race and it gave me a structured
+              answer based on my actual data.
+            </p>
+          </blockquote>
+          <footer class="testimonial-author">
+            <div class="testimonial-avatar" aria-hidden="true">BT</div>
+            <div class="testimonial-author-info">
+              <strong>Beta Tester</strong>
+              <span>Marathon runner</span>
+            </div>
+          </footer>
+        </article>
+
+        <article class="testimonial-card" role="listitem">
+          <blockquote class="testimonial-quote">
+            <p>
+              Having strength, cycling, and nutrition all in one place with a
+              unified readiness score is something no other platform offers.
+              The free tier alone is better than most paid alternatives.
+            </p>
+          </blockquote>
+          <footer class="testimonial-author">
+            <div class="testimonial-avatar" aria-hidden="true">BT</div>
+            <div class="testimonial-author-info">
+              <strong>Beta Tester</strong>
+              <span>Triathlete</span>
+            </div>
+          </footer>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       WAITLIST FORM
+       ============================================================ -->
+  <section class="waitlist section" id="waitlist" aria-labelledby="waitlist-heading">
+    <div class="container">
+      <p class="section-label">Early access</p>
+      <h2 class="waitlist-heading" id="waitlist-heading">Get early access.<br />No credit card required.</h2>
+      <p class="waitlist-subheading">
+        Be the first to know when mycoach launches.
+      </p>
+      <span class="waitlist-offer">
+        🎁 First 100 signups → 3 months Athlete tier free at launch
+      </span>
+
+      <div class="tally-embed-wrapper">
+        <!-- Tally.so embed — replace YOUR_TALLY_FORM_ID with actual form ID after creation -->
+        <iframe
+          data-tally-src="https://tally.so/embed/YOUR_TALLY_FORM_ID?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
+          loading="lazy"
+          width="100%"
+          height="380"
+          frameborder="0"
+          marginheight="0"
+          marginwidth="0"
+          title="mycoach waitlist signup"
+        ></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FOOTER
+       ============================================================ -->
+  <footer class="footer" id="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <!-- Brand -->
+        <div>
+          <div class="footer-logo">
+            mycoach<span style="color: var(--color-accent);">·</span>
+          </div>
+          <p class="footer-tagline">
+            Built by an athlete, for athletes.<br />
+            Serious training tools. Honest pricing.
+          </p>
+        </div>
+
+        <!-- Product links -->
+        <div>
+          <p class="footer-col-heading">Product</p>
+          <ul class="footer-links" role="list">
+            <li><a href="#features">Features</a></li>
+            <li><a href="#pricing">Pricing</a></li>
+            <li><a href="#compare">Compare</a></li>
+            <li><a href="#waitlist">Join Waitlist</a></li>
+          </ul>
+        </div>
+
+        <!-- Legal + Social -->
+        <div>
+          <p class="footer-col-heading">Connect</p>
+          <ul class="footer-social-links" role="list">
+            <li>
+              <a href="https://twitter.com/mycoachapp" rel="noopener noreferrer" target="_blank" aria-label="Twitter/X">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.748l7.73-8.835L1.254 2.25H8.08l4.259 5.632L18.244 2.25Zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77Z"/>
+                </svg>
+                Twitter / X
+              </a>
+            </li>
+            <li>
+              <a href="https://github.com/kilianstallz" rel="noopener noreferrer" target="_blank" aria-label="GitHub">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.02 10.02 0 0 0 22 12.017C22 6.484 17.522 2 12 2Z"/>
+                </svg>
+                GitHub
+              </a>
+            </li>
+            <li>
+              <a href="#" aria-label="Strava Club">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M15.387 17.944l-2.089-4.116h-3.065L15.387 24l5.15-10.172h-3.066m-7.008-5.599l2.836 5.598h4.172L10.463 0l-7 13.828h4.169"/>
+                </svg>
+                Strava Club
+              </a>
+            </li>
+          </ul>
+
+          <p class="footer-col-heading" style="margin-top: 1.5rem;">Legal</p>
+          <ul class="footer-links" role="list">
+            <li><a href="/privacy">Privacy Policy</a></li>
+            <li><a href="/terms">Terms of Service</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bar">
+        <span>© 2026 mycoach. Austria.</span>
+        <span>Built by an athlete, for athletes.</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============================================================
+       JAVASCRIPT — Nav scroll + mobile menu + pricing toggle + analytics
+       ============================================================ -->
+  <script>
+    // ---- Nav scroll behavior ----
+    const nav = document.getElementById('main-nav');
+    const scrollThreshold = 40;
+
+    function updateNav() {
+      if (window.scrollY > scrollThreshold) {
+        nav?.classList.add('scrolled');
+      } else {
+        nav?.classList.remove('scrolled');
+      }
+    }
+
+    window.addEventListener('scroll', updateNav, { passive: true });
+    updateNav();
+
+    // ---- Mobile menu ----
+    const hamburger = document.getElementById('nav-hamburger');
+    const mobileMenu = document.getElementById('nav-mobile-menu');
+
+    hamburger?.addEventListener('click', () => {
+      const isOpen = mobileMenu?.classList.contains('open');
+      mobileMenu?.classList.toggle('open');
+      hamburger.setAttribute('aria-expanded', String(!isOpen));
+    });
+
+    // Close mobile menu when a link is clicked
+    document.querySelectorAll('.mobile-nav-link, .nav-mobile-menu .btn').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu?.classList.remove('open');
+        hamburger?.setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    // ---- Pricing toggle ----
+    const toggleBtn = document.getElementById('pricing-toggle') as HTMLButtonElement | null;
+    const pricingCards = document.getElementById('pricing-cards');
+    const monthlyLabel = document.getElementById('toggle-monthly-label');
+    const annualLabel = document.getElementById('toggle-annual-label');
+
+    let isAnnual = false;
+
+    function updatePricing() {
+      if (isAnnual) {
+        toggleBtn?.classList.add('annual');
+        toggleBtn?.setAttribute('aria-checked', 'true');
+        pricingCards?.classList.add('is-annual');
+        monthlyLabel?.classList.remove('active');
+        annualLabel?.classList.add('active');
+
+        // Update dynamic prices
+        document.querySelectorAll<HTMLElement>('[data-annual]').forEach(el => {
+          el.textContent = el.dataset.annual ?? el.textContent;
+        });
+      } else {
+        toggleBtn?.classList.remove('annual');
+        toggleBtn?.setAttribute('aria-checked', 'false');
+        pricingCards?.classList.remove('is-annual');
+        monthlyLabel?.classList.add('active');
+        annualLabel?.classList.remove('active');
+
+        // Restore monthly prices
+        document.querySelectorAll<HTMLElement>('[data-monthly]').forEach(el => {
+          el.textContent = el.dataset.monthly ?? el.textContent;
+        });
+      }
+    }
+
+    toggleBtn?.addEventListener('click', () => {
+      isAnnual = !isAnnual;
+      updatePricing();
+    });
+
+    // Clicking on labels also toggles
+    monthlyLabel?.addEventListener('click', () => {
+      if (isAnnual) { isAnnual = false; updatePricing(); }
+    });
+    annualLabel?.addEventListener('click', () => {
+      if (!isAnnual) { isAnnual = true; updatePricing(); }
+    });
+
+    // ---- Umami custom events ----
+    const heroCtaBtn = document.getElementById('cta-hero');
+    heroCtaBtn?.addEventListener('click', () => {
+      if (typeof (window as any).umami !== 'undefined') {
+        (window as any).umami.track('cta_hero_click');
+      }
+    });
+
+    // Pricing section view — IntersectionObserver
+    const pricingSection = document.getElementById('pricing');
+    if (pricingSection) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            if (typeof (window as any).umami !== 'undefined') {
+              (window as any).umami.track('pricing_section_view');
+            }
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.3 });
+      observer.observe(pricingSection);
+    }
+
+    // ---- Tally.so embed loader ----
+    const tallyScript = document.createElement('script');
+    tallyScript.src = 'https://tally.so/widgets/embed.js';
+    tallyScript.async = true;
+    document.head.appendChild(tallyScript);
+  </script>
+</Layout>
