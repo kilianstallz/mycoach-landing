@@ -3,7 +3,7 @@ import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
   site: 'https://kilianstallz.github.io',
-  base: '/mycoach-landing',
+  base: '/veloiq-landing',
   integrations: [sitemap()],
   output: 'static',
 });

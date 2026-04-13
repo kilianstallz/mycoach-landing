@@ -6,9 +6,9 @@ interface Props {
 }
 
 const {
-  title = 'mycoach — Training Platform for Serious Endurance Athletes',
+  title = 'Veloiq — Training Platform for Serious Endurance Athletes',
   description = 'PMC charts, AI coaching, strength tracking, and nutrition — all in one app. Built for cyclists and runners. Free tier available.',
-  ogImage = '/mycoach-landing/og-image.png',
+  ogImage = '/veloiq-landing/og-image.png',
 } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
@@ -39,7 +39,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     <script type="application/ld+json" set:html={JSON.stringify({
       "@context": "https://schema.org",
       "@type": "SoftwareApplication",
-      "name": "mycoach",
+      "name": "Veloiq",
       "description": description,
       "applicationCategory": "SportsApplication",
       "operatingSystem": "Web",
@@ -66,7 +66,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     })} />
 
     <!-- Favicon placeholder -->
-    <link rel="icon" type="image/svg+xml" href="/mycoach-landing/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href="/veloiq-landing/favicon.svg" />
 
     <!-- Umami Analytics -->
     <script defer src="https://umami.kilianmbg.dev/script.js" data-website-id="1c567f1f-f042-470e-bca7-7c54ae706966"></script>
