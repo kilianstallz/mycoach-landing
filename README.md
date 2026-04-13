@@ -1,1 +1,1 @@
-# mycoach-landing
+# veloiq-landing

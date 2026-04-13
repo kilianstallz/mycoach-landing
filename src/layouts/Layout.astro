@@ -6,7 +6,7 @@ interface Props {
 }
 
 const {
-  title = 'mycoach — Training Platform for Serious Endurance Athletes',
+  title = 'Veloiq — Training Platform for Serious Endurance Athletes',
   description = 'PMC charts, AI coaching, strength tracking, and nutrition — all in one app. Built for cyclists and runners. Free tier available.',
   ogImage = '/mycoach-landing/og-image.png',
 } = Astro.props;
@@ -39,7 +39,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     <script type="application/ld+json" set:html={JSON.stringify({
       "@context": "https://schema.org",
       "@type": "SoftwareApplication",
-      "name": "mycoach",
+      "name": "Veloiq",
       "description": description,
       "applicationCategory": "SportsApplication",
       "operatingSystem": "Web",
