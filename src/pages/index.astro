@@ -699,28 +699,47 @@ import '../styles/global.css';
     });
 
     // ---- Umami custom events ----
-    const heroCtaBtn = document.getElementById('cta-hero');
-    heroCtaBtn?.addEventListener('click', () => {
+    function umamiTrack(event: string, data?: Record<string, unknown>) {
       if (typeof (window as any).umami !== 'undefined') {
-        (window as any).umami.track('cta_hero_click');
+        (window as any).umami.track(event, data);
       }
-    });
+    }
 
-    // Pricing section view — IntersectionObserver
-    const pricingSection = document.getElementById('pricing');
-    if (pricingSection) {
+    // Hero CTA click
+    const heroCtaBtn = document.getElementById('cta-hero');
+    heroCtaBtn?.addEventListener('click', () => umamiTrack('cta_hero_click'));
+
+    // Section views via IntersectionObserver
+    function trackSectionView(id: string, eventName: string, threshold = 0.3) {
+      const section = document.getElementById(id);
+      if (!section) return;
       const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
-            if (typeof (window as any).umami !== 'undefined') {
-              (window as any).umami.track('pricing_section_view');
-            }
+            umamiTrack(eventName);
             observer.unobserve(entry.target);
           }
         });
-      }, { threshold: 0.3 });
-      observer.observe(pricingSection);
+      }, { threshold });
+      observer.observe(section);
     }
+
+    trackSectionView('pricing', 'pricing_section_view');
+    trackSectionView('waitlist', 'waitlist_section_view');
+    trackSectionView('features', 'features_section_view');
+
+    // Pricing CTA clicks — track which tier was selected
+    document.querySelectorAll<HTMLAnchorElement>('.pricing-cta').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const tier = btn.closest('.pricing-card')?.querySelector('.pricing-tier-name')?.textContent?.trim() ?? 'unknown';
+        umamiTrack('pricing_cta_click', { tier });
+      });
+    });
+
+    // Pricing toggle — annual vs monthly
+    toggleBtn?.addEventListener('click', () => {
+      umamiTrack('pricing_toggle', { billing: isAnnual ? 'annual' : 'monthly' });
+    });
 
     // ---- Tally.so embed loader ----
     const tallyScript = document.createElement('script');
